@@ -5,7 +5,6 @@ import NavBar from './NavBar';
 import QuestsList from './QuestsList';
 import { QuestType } from '@/types/QuestType';
 import { QuestsListPropsType } from '@/types/QuestsListPropsType';
-import { GenreType } from '@/types/GenreType';
 
 const QuestsContent: React.FC<QuestsListPropsType> = ({ quests }) => {
   const [selectedGenre, setSelectedGenre] = useState('all');

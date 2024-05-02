@@ -4,8 +4,8 @@ import Navigation from './ui-kit/Navigation';
 
 const Header: React.FC = () => {
   return (
-    <header className='text-light text-primary font-ralewaySemibold text-sm font-semibold'>
-      <div className='py-5 px-8 flex justify-between items-center'>
+    <header className='text-light fixed w-full bg-transparent text-primary font-ralewaySemibold text-sm font-semibold z-10'>
+      <div className='py-5 px-8  top-0 left-0 flex justify-between items-center'>
         <div className='flex items-center hover:cursor-pointer'>
           <Logo />
         </div>

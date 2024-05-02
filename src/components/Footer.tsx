@@ -1,28 +1,16 @@
-import Image from 'next/image';
+import { icons } from './ui-kit/Icons';
 
 const Footer: React.FC = () => {
   return (
-    <footer className='text-light text-primary font-ralewaySemibold text-sm font-semibold bg-transparent'>
+    <footer className='fixed bottom-0 left-0 text-light text-primary font-ralewaySemibold text-sm font-semibold bg-transparent'>
       <div className='py-5 px-8 flex justify-between items-center'>
-        <div className='flex gap-x-3'>
-          <Image
-            src='/img/icons/inst.svg'
-            width={24}
-            height={24}
-            alt='Phone'
-          />
-          <Image
-            src='/img/icons/twit.svg'
-            width={24}
-            height={24}
-            alt='Phone'
-          />
-          <Image
-            src='/img/icons/youtub.svg'
-            width={24}
-            height={24}
-            alt='Phone'
-          />
+        <div className='flex gap-x-3  '>
+          {icons.map(({ id, ComponentSVG, className }) => (
+            <ComponentSVG
+              key={id}
+              className={className}
+            />
+          ))}
         </div>
       </div>
     </footer>

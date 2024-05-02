@@ -12,7 +12,9 @@ const LinkItem: React.FC<ListNavLinkType> = ({ nameLink, path }) => {
       className={`text-primary font-robotoMedium leading-4 font-medium ${
         pathName === path ? 'text-secondary' : 'text-primary'
       }`}>
-      <Link href={path}>
+      <Link
+        href={path}
+        scroll={false}>
         <span className='hover:text-secondary'>{nameLink}</span>
       </Link>
     </li>

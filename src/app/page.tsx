@@ -1,11 +1,10 @@
 import { getQuests } from '@/actions/api';
-
 import QuestsContent from '@/components/QuestsContent';
 
 const Home: React.FC = async () => {
   const quests = await getQuests();
   return (
-    <section className='container py-12'>
+    <section className='container py-12 gradient-bg'>
       <div className='w-full'>
         <span className='font-ralewayMedium font-medium text-sm text-secondary'>
           Квести у Києві

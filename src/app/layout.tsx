@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'On the site you can find an interesting quest on your favorite topic and learn all the details about it.',
 };
 
-const bodyClasses = `${ralewayBlack.variable} ${ralewayBold.variable} ${ralewayExtrabold.variable} ${ralewayMedium.variable} ${ralewayRegular.variable} ${ralewaySemibold.variable} w-full h-screen flex flex-col gradient-bg`;
+const bodyClasses = `${ralewayBlack.variable} ${ralewayBold.variable} ${ralewayExtrabold.variable} ${ralewayMedium.variable} ${ralewayRegular.variable} ${ralewaySemibold.variable} w-full h-screen flex flex-col `;
 
 export default function RootLayout({
   children,
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={bodyClasses}>
         <Header />
-        <main className='flex-auto '>{children}</main>
+        <main className='flex-auto my-[92px]'>{children}</main>
         <Footer />
       </body>
     </html>
