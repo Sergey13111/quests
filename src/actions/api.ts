@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '@/helpers/constants';
+import { OrderQuestType } from '@/types/OrderQuestType';
 
 export const getQuests = async () => {
   try {
@@ -21,5 +22,26 @@ export const getDeteiledQuests = async (id: string) => {
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
+  }
+};
+
+export const orderQuests = async (formData: OrderQuestType) => {
+  try {
+    const url = `${API_BASE_URL}/orders`;
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return {
+        error: err?.message,
+      };
+    }
   }
 };

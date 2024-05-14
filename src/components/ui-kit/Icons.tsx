@@ -30,7 +30,7 @@ export const SvgTwitter: React.FC<SvgProps> = ({ className }) => (
   </svg>
 );
 
-export const SvgInstagram: React.FC<any> = ({ className }) => (
+export const SvgInstagram: React.FC<SvgProps> = ({ className }) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className={className}

@@ -31,6 +31,7 @@ const config: Config = {
         light: '#F0F0F0',
         white: '#ffffff',
         btnHover: '#F39425',
+        disabled: '#B8B8B8',
         // gray: {
         //   '900': '#1C1B1B',
         //   '800': '#2E2E2E',

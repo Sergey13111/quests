@@ -2,6 +2,7 @@ import { getDeteiledQuests } from '@/actions/api';
 import Image from 'next/image';
 import Badge from '@/components/ui-kit/Badge';
 import Buttom from '@/components/ui-kit/Buttom';
+import { redirect } from 'next/navigation';
 
 interface DetailsQuest {
   params: {
@@ -49,8 +50,10 @@ const DetailsQuest: React.FC<DetailsQuest> = async ({ params }) => {
             <p className='w-full font-ralewayMedium font-medium text-pretty text-sm mb-10'>
               {quest.description}
             </p>
-            <Buttom>
-              <span className='font-ralewayBold text-lg	font-bold text-white  '>ЗАБРОНИРОВАТЬ</span>
+            <Buttom
+              type='button'
+              href={`/quests/${params.id}/orderQuest`}>
+              <span className='font-ralewayBold text-lg	font-bold text-white'>ЗАБРОНИРОВАТЬ</span>
             </Buttom>
           </div>
         </div>
