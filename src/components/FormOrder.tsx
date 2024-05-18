@@ -39,7 +39,6 @@ const FormOrder: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
-    debugger;
     const formData = {
       name: data.name,
       phone: data.phone,
@@ -48,12 +47,17 @@ const FormOrder: React.FC = () => {
     };
     try {
       const order = await orderQuests(formData);
-      if (order.error) throw new Error(order.error);
-      if (order === 201) {
+      if (order) {
         toast.success('Заказ успешно оформлен', {
           onClose: () => router.back(),
           autoClose: 3000,
         });
+        // if (order.error) throw new Error(order.error);
+        // if (order === 201) {
+        //   toast.success('Заказ успешно оформлен', {
+        //     onClose: () => router.back(),
+        //     autoClose: 3000,
+        //   });
         reset();
       }
     } catch (error: unknown) {
