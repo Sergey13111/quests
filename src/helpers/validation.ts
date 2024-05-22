@@ -16,3 +16,32 @@ export const schemaOrderQuest = z.object({
 });
 
 export type FormData = z.infer<typeof schemaOrderQuest>;
+
+export const schemaValidationSignUp = z.object({
+  name: z.string().min(1, { message: 'Поле обязательно' }),
+  email: z
+    .string()
+    .min(1, { message: 'Поле обязательно' })
+    .email({ message: 'Некорректный email' }),
+  password: z
+    .string()
+    .min(8, { message: 'Пароль должен содержать минимум 8 символов' })
+    .regex(/[a-zA-Z]/, { message: 'Пароль должен содержать хотя бы одну латинскую букву' })
+    .regex(/[0-9]/, { message: 'Пароль должен содержать хотя бы одну цифру' }),
+});
+
+export type FormSignUpType = z.infer<typeof schemaValidationSignUp>;
+
+export const schemaValidationSignIn = z.object({
+  email: z
+    .string()
+    .min(1, { message: 'Поле обязательно' })
+    .email({ message: 'Некорректный email' }),
+  password: z
+    .string()
+    .min(8, { message: 'Пароль должен содержать минимум 8 символов' })
+    .regex(/[a-zA-Z]/, { message: 'Пароль должен содержать хотя бы одну латинскую букву' })
+    .regex(/[0-9]/, { message: 'Пароль должен содержать хотя бы одну цифру' }),
+});
+
+export type FormSignInType = z.infer<typeof schemaValidationSignIn>;

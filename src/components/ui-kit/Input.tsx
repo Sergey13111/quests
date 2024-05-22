@@ -1,14 +1,12 @@
 'use client';
 
-import { FormData } from '@/helpers/validation';
-import { OrderQuestType } from '@/types/OrderQuestType';
 import React from 'react';
 import { Control, Controller, FieldValues } from 'react-hook-form';
 
 export type InputPropsType = {
   type?: string;
   label: string;
-  name: keyof OrderQuestType;
+  name: string;
   error?: string | undefined;
   control: Control<any>;
   placeholder: string;

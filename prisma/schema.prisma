@@ -26,3 +26,10 @@ model OrderQuest {
   phone       String
   isLegal     Boolean
 }
+
+model CreateUser {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  password    String
+}
