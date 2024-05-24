@@ -1,14 +1,18 @@
 'use server';
-
 import { listNavLink } from '@/helpers/constants';
 import Logo from './ui-kit/Logo';
 import Navigation from './ui-kit/Navigation';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
+import Logout from './Logout';
 
 const Header: React.FC = () => {
   const cookieStore = cookies();
   const auth = cookieStore.get('auth');
+
+  const handleLogout = async () => {
+    cookies().delete('name');
+  };
 
   return (
     <header className='text-light fixed w-full bg-transparent text-primary font-ralewaySemibold text-sm font-semibold z-10'>
@@ -24,22 +28,22 @@ const Header: React.FC = () => {
           />
         </div>
         <div className='flex items-center'>
-          {auth?.value ? (
-            <Link href='/'>Logout</Link>
-          ) : (
-            <>
-              <Link
-                href='/sign-up'
-                className='hover:text-secondary hover:cursor-pointer'>
-                Sign Up
-              </Link>
-              <Link
-                href='/sign-in'
-                className='hover:text-secondary hover:cursor-pointer ml-4'>
-                Sign In
-              </Link>
-            </>
-          )}
+          {/* {auth?.value ? (
+            <Logout />
+          ) : ( */}
+          <>
+            <Link
+              href='/sign-up'
+              className='hover:text-secondary hover:cursor-pointer'>
+              Sign Up
+            </Link>
+            <Link
+              href='/sign-in'
+              className='hover:text-secondary hover:cursor-pointer ml-4'>
+              Sign In
+            </Link>
+          </>
+          {/* )} */}
         </div>
 
         <div className='flex items-center'>

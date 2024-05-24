@@ -5,7 +5,7 @@ export type QuestType = {
   previewImg: string;
   coverImg: string;
   type: string;
-  level: 'easy' | 'medium' | 'hard';
-  peopleCount: [number, number];
+  level: string;
+  peopleCount: number[];
   duration: number;
 };

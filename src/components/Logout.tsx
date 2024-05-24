@@ -1,11 +1,11 @@
-'use  client';
+'use client';
 
-import { deleteAuthCookie } from '@/helpers/auth';
 import React from 'react';
+import { deleteAuthCookie } from '@/helpers/auth';
 
 const Logout: React.FC = () => {
   const handleLogout = async () => {
-    await deleteAuthCookie();
+    deleteAuthCookie();
   };
   return (
     <button
